@@ -8,15 +8,17 @@
 </head>
 <body>
 
-    <div class="content">
+    <div>
        <form action="">
         <h1>Podaj swoje dane</h1>
             <p><input type="text" placeholder="Imię" name="imie"></p>
             <p><input type="text" placeholder="Nazwisko" name="nazwisko"></p>
-            <p>Numer telefonu<input type="number" name="nu_tel" maxlength="3">-<input type="number" maxlength="3">-<input type="number" maxlength="3">       </form> 
+            <p style="display: flex; flex-direction: row; align-items: center; justify-content: center;">Numer telefonu <input style="margin-left: 5px;" type="number" name="nu_tel" maxlength="3">-<input type="number" maxlength="3">-<input type="number" maxlength="3">
             <p><input type="email" name="email" placeholder="Adres email"></p>
             <p><input type="password" name="haslo" placeholder="Hasło"></p>
             <p><input type="password" placeholder="Powtórz hasło"></p>
+            <p><input type="submit" value="Zarejestruj się"></p>
+        </form>
     </div>
     
 </body>
