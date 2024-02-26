@@ -1,0 +1,35 @@
+body {
+    background-image: url('images/background.jpg');
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+header {
+    text-align: right;
+    background-color: white;
+    padding: 5px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+header.left {
+    text-align: left;
+}
+
+header.right {
+    text-align: right;
+}
+
+header.center {
+    text-align: center;
+}
+
+.content {
+    border-radius: 15px;
+    background-color: white;
+}
