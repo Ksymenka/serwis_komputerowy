@@ -98,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `uzytkownik` (
   `nr_tel` varchar(9) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `typ_konta` int(11) DEFAULT NULL,
+  'haslo' varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `typ_konta` (`typ_konta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;

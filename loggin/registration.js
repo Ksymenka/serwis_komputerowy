@@ -7,28 +7,33 @@ let password = document.getElementById("password");
 let repeatPassword = document.getElementById("repeatPassword");
 let elements = [imie, nazwisko, nr_tel, email, password, repeatPassword];
 
-function isEmpty(string) {
-    string = string.trim();
-    if (string === "" || string.lenght === 0) {
+function isEmpty(element) {
+    if (element.value.trim() === "") {
         return false;
     }
     return true;
 }
 
+function setErrorMessage(message) {
+    document.getElementById("err").innerHTML = `${message}`;
+}
+
 rejestracja.onsubmit = (event) => {
     elements.forEach(element => {
         if (isEmpty(element.value)) {
-            document.getElementById("err").innerHTML = `Proszę podać wszystkie elementy`;
+            console.log(element.value);
             event.preventDefault();
+            setErrorMessage("Proszę podać wszystkie elementy")
         }
         
         if (password.value !== repeatPassword.value) {
             event.preventDefault();
-            document.getElementById("err").innerHTML = `Hasła nie są takie same`;
+            setErrorMessage("Hasła nie są takie same");
         }
         
         if (!email.value.includes("@")) {
-            document.getElementById("err").innerHTML = `Proszę podać poprawny mail`;
+            event.preventDefault();
+            setErrorMessage("Podany błędny mail");
         } 
     });    
 }
