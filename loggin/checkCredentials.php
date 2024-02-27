@@ -26,7 +26,15 @@ $password = password_hash($conn -> real_escape_string($_POST["haslo"]), PASSWORD
 echo $name, $surname, $nr_tel,"<br>", $password;
 
 $sql = "INSERT INTO uzytkownik(imie, nazwisko, nr_tel, email, typ_konta, haslo) VALUES ('$name', '$surname', '$nr_tel', '$email', 1, '$password')";
+
+if ($conn -> query($sql) === TRUE) {
+    echo "Dodano nowego użytkownika";
+} else {
+    echo "Błąd: " . $sql . "<br>" . $conn->error;
+}
 $conn -> close();
+
+
 
 header("Location: ./login.html");
 ?>
