@@ -1,19 +1,19 @@
-const logowanie = document.getElementById("logowanie");
-let login = document.getElementById("login");
-let haslo = document.getElementById("haslo");
+const FORM = document.querySelector('form');
+let elements = document.querySelectorAll('input');
+let error = document.getElementById("err");
 
-function isEmpty(string) {
-    string = string.trim();
-    if (string === "" || string.lenght === 0) {
-        return false;
-    }
-    return true;
+function isEmpty(element) {
+    return element.value.trim() === "";
 }
 
-logowanie.onsubmit = (event) => {
-    if (isEmpty(login.value) || isEmpty(haslo.value)) {
-        event.preventDefault();
-        document.getElementById("err").innerHTML = `Podaj login i hasło`;
-    }
-}
 
+FORM.onsubmit = (event) => {
+    elements.forEach(element => {
+        console.log(element);
+        if (isEmpty(element)) {
+            event.preventDefault();
+            error.innerHTML = "Proszę podać wszystkie dane";
+            return;
+        }
+    });    
+}

@@ -15,6 +15,6 @@ $login = $conn -> real_escape_string($_POST["login"]);
 $password = $conn -> real_escape_string($_POST["password"]);
 
 $verifyLogin = $conn -> query("SELECT email FROM uzytkownik WHERE email=$login");
-
+echo $verifyLogin;
 
 
