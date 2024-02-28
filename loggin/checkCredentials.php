@@ -16,11 +16,8 @@ $options = [
 
 $name = $conn -> real_escape_string($_POST["imie"]);
 $surname = $conn -> real_escape_string($_POST["nazwisko"]);
-$nr_tel1 = $conn -> real_escape_string($_POST["nr_tel1"]);
-$nr_tel2 = $conn -> real_escape_string($_POST["nr_tel2"]);
-$nr_tel3 = $conn -> real_escape_string($_POST["nr_tel3"]);
 $email = $conn -> real_escape_string($_POST['email']);
-$nr_tel = $nr_tel1 . $nr_tel2 . $nr_tel3;
+$nr_tel = $conn -> real_escape_string($_POST["nr_tel"]);
 $password = password_hash($conn -> real_escape_string($_POST["haslo"]), PASSWORD_DEFAULT, $options) ;
 
 echo $name, $surname, $nr_tel,"<br>", $password;

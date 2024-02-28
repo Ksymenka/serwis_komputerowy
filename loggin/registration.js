@@ -1,40 +1,36 @@
-const rejestracja = document.getElementById("rejestracja");
-let imie = document.getElementById("imie");
-let nazwisko = document.getElementById("nazwisko");
-let nr_tel = document.getElementById("nr_tel");
-let email = document.getElementById("email");
-let password = document.getElementById("password");
-let repeatPassword = document.getElementById("repeatPassword");
-let elements = [imie, nazwisko, nr_tel, email, password, repeatPassword];
+const registration = document.getElementById("rejestracja");
+let inputs = document.querySelectorAll('input');
+
 
 function isEmpty(element) {
-    if (element.value.trim() === "") {
-        return false;
-    }
-    return true;
+    return element && element.value.trim() === "";
 }
 
 function setErrorMessage(message) {
     document.getElementById("err").innerHTML = `${message}`;
 }
 
-rejestracja.onsubmit = (event) => {
-    elements.forEach(element => {
-        if (isEmpty(element.value)) {
-            console.log(element.value);
-            event.preventDefault();
-            setErrorMessage("Proszę podać wszystkie elementy")
-        }
-        
-        if (password.value !== repeatPassword.value) {
-            event.preventDefault();
-            setErrorMessage("Hasła nie są takie same");
-        }
-        
-        if (!email.value.includes("@")) {
-            event.preventDefault();
-            setErrorMessage("Podany błędny mail");
-        } 
-    });    
+function validatePhoneNumber(phoneNumber) {
+    // Wyrażenie regularne dla akceptowalnego formatu numeru telefonu
+    const phoneRegex = /^(\+\d{1,2}\s?)?(\(\d{3}\)|\d{3})([-.\s]?)\d{3}([-.\s]?)\d{4}$/;
+    return phoneRegex.test(phoneNumber);
 }
- 
+
+
+registration.onsubmit = (event) => {
+   inputs.forEach(input => {
+   console.log(input);
+        if(isEmpty(input.value)) {
+            event.preventDefault();
+            setErrorMessage("Proszę wypełnić wszysktie pola");
+        }
+        if(inputs[5].value !== inputs[6].value) {
+            event.preventDefault();
+            setErrorMessage("Hasła się nie zgadzają");
+        }
+        if (validatePhoneNumber(inputs[4].value)) {
+           event.preventDefault();
+           setErrorMessage("Prosze podać poprawny numer telefonu"); 
+        }
+   }); 
+};
