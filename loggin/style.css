@@ -1,3 +1,18 @@
+header {
+    background-color: #03b1e64d;
+    color: white;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    text-align: right;
+    padding: 5px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+header a {
+    color: rgb(47, 255, 168);
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -7,14 +22,6 @@ body {
     background-position: fixed;
     background-repeat: no-repeat;
     background-size:cover;
-}
-
-header {
-    text-align: right;
-    background-color: white;
-    padding: 5px;
-    border-radius: 25px;
-    border: 1px solid black;
 }
 
 
@@ -52,8 +59,6 @@ form {
     align-items: center;
     flex-direction: column;
     width: fit-content;
-    border: 2px black;
-    border-style: dashed;
     border-radius: 10px;
     padding: 10px;
 }

@@ -6,12 +6,18 @@ body {
 }
 
 header {
+    background-color: #03b1e64d;
+    color: white;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
     text-align: right;
-    background-color: rgb(255, 25, 25);
-    backdrop-filter: 10px;
     padding: 5px;
     border-radius: 25px;
     border: 1px solid black;
+}
+
+header a {
+    color: rgb(47, 255, 168);
 }
 
 h1 {

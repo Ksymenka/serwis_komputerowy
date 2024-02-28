@@ -14,6 +14,7 @@ if ($conn->connect_error) {
 $login = $conn -> real_escape_string($_POST["login"]);
 $password = $conn -> real_escape_string($_POST["password"]);
 
-$sql = "SELECT email FROM uzytkownik WHERE email=$login";
-$result = $conn -> query($sql);
+$verifyLogin = $conn -> query("SELECT email FROM uzytkownik WHERE email=$login");
+
+
 
