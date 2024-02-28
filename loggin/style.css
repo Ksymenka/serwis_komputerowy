@@ -7,6 +7,7 @@ header {
     padding: 5px;
     border-radius: 25px;
     border: 1px solid black;
+    margin-bottom: 10px;
 }
 
 header a {
@@ -50,6 +51,7 @@ p input {
 }
 
 form {
+    margin-top: 10px;
     background-color: #03b1e64d;
     color: white;
     backdrop-filter: blur(40px);

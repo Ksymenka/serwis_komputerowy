@@ -9,24 +9,21 @@
 <body>
 
     <header>
-        <a href="../news.html">Wiadomości</a>
         <a href="../loggin/login.html">Zaloguj się</a>
         <a href="../index.html">Strona główna</a>
     </header>
 
-    <div>
-       <form action="checkCredentials.php" method="post" id="rejestracja">
+       <form action="checkCredentias.php" method="post" id="rejestracja">
         <h1>Podaj swoje dane</h1>
             <p><input id="imie" type="text" placeholder="Imię" name="imie"></p>
             <p><input id="nazwisko" type="text" placeholder="Nazwisko" name="nazwisko"></p>
-            <p><input id="email" type="email" name="email" autocomplete="username" placeholder="Adres email"></p>
+            <p><input id="email" type="email" name="email" autocomplete="username" placeholder="Adres e-mail"></p>
             <p><input type="number" style="width: 95%;" name="nr_tel" id="nr_tel" maxlength="9" placeholder="Numer telefonu" min="0"></p>
             <p><input id="password" autocomplete="new-password" type="password" name="haslo" placeholder="Hasło"></p>
             <p><input id="repeatPassword" autocomplete="new-password" type="password" placeholder="Powtórz hasło"></p>
             <p><input id="submit" type="submit" value="Zarejestruj się"></p>
             <p id="err"></p>
-        </form>
-    </div>
+       </form>
    <script src="registration.js"></script> 
 </body>
 </html>
