@@ -6,6 +6,7 @@ body {
 }
 
 header {
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-around;
     background-color: #03b1e64d;
@@ -26,12 +27,13 @@ h1 {
 }
 
 .content {
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     padding: 15px;
     background-color: rgb(5, 179, 179);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-radius: 15px;
 }
 
