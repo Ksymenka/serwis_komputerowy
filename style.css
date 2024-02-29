@@ -6,11 +6,12 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-around;
     background-color: #03b1e64d;
     color: white;
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
-    text-align: right;
     padding: 5px;
     border-radius: 25px;
     border: 1px solid black;
@@ -24,19 +25,18 @@ h1 {
     text-align: center;
 }
 
-header.left {
-    text-align: left;
-}
-
-header.right {
-    text-align: right;
-}
-
-header.center {
-    text-align: center;
-}
-
 .content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: rgb(5, 179, 179);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border-radius: 15px;
-    background-color: white;
+}
+
+.content p {
+    display: flex;
+    padding: 15px;
+    align-items: center;
 }

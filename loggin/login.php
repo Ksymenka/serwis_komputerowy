@@ -8,9 +8,9 @@
 </head>
 <body>
     <header>
+        <a href="../index.html">Strona główna</a>
         <a href="./login.html">Zaloguj się ponownie</a>
         <a href="./registration.html">Zarejestruj się</a>
-        <a href="../index.html">Strona główna</a>
     </header>
     <div class=content>
         <h1>Podano błędne hasło lub login</h1>

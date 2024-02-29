@@ -1,5 +1,8 @@
 header {
+    display: flex;
+    justify-content: space-between;
     background-color: #03b1e64d;
+    width: 40%;
     color: white;
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
@@ -32,7 +35,9 @@ body {
     align-items: center;
     justify-items: center;
     border-radius: 15px;
-    background-color: white;
+    background-color: rgb(5, 179, 179);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 }
 
 .content input {
