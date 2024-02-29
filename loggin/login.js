@@ -11,6 +11,7 @@ FORM.onsubmit = (event) => {
     elements.forEach(element => {
         console.log(element);
         if (isEmpty(element)) {
+            console.log("element " + element + " jest pusty");
             event.preventDefault();
             error.innerHTML = "Proszę podać wszystkie dane";
             return;

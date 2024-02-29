@@ -8,15 +8,15 @@
 </head>
 <body>
 
-    <header>
+   <header>
         <a href="./registration.html">Zarejestruj się</a>
         <a href="../index.html">Strona główna</a>
     </header>
 
-        <form action="login.php" id="logowanie">
+        <form action="login.php" method="post" id="logowanie">
             <h1>Podaj swoje dane!</h1>
-            <p><input id="login" type="text" placeholder="Adres e-mail" autocomplete="email"></p>
-            <p><input id="haslo" type="password" placeholder="hasło" autocomplete="current-password">  </p>
+            <p><input id="login" name="login" type="text" placeholder="Adres e-mail" autocomplete="email"></p>
+            <p><input id="haslo" name="haslo" type="password" placeholder="hasło" autocomplete="current-password">  </p>
             <p id="err"></p>
             <p><input type="submit" value="Zaloguj"></p>
         </form>
