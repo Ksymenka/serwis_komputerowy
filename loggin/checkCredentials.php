@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@ function checkIfExist($conn, $email) {
     $stmt -> fetch();
     $stmt -> close();
     
-    return $dataBasemail->
+    return $dataBasemail == $email;
 }
 
 if ($conn->connect_error) {
@@ -46,6 +46,10 @@ $surname = $conn -> real_escape_string($_POST["nazwisko"]);
 $email = $conn -> real_escape_string($_POST['email']);
 $nr_tel = $conn -> real_escape_string($_POST["nr_tel"]);
 $password = password_hash($conn -> real_escape_string($_POST["haslo"]), PASSWORD_DEFAULT, $options) ;
+
+if (checkIfExist($conn, $email)) {
+    header("Location: ./userAlreadyExists.html");
+}
 
 
 $sql = "INSERT INTO uzytkownik(imie, nazwisko, nr_tel, email, typ_konta, haslo) VALUES ('$name', '$surname', '$nr_tel', '$email', 1, '$password')";
