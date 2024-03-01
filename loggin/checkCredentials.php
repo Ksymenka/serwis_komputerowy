@@ -13,6 +13,8 @@
         <a href="./registration.html">Zarejestruj się</a>
     </header>
 
+    <h1>Użytkownik o tym adresie email już istnieje!</h1>
+
 <?php
 $servername = "127.0.0.1"; 
 $username = "Admin";
@@ -29,7 +31,6 @@ function checkIfExist($conn, $email) {
     $stmt -> bind_result($dataBasemail);
     $stmt -> fetch();
     $stmt -> close();
-    
     return $dataBasemail == $email;
 }
 
@@ -47,23 +48,18 @@ $email = $conn -> real_escape_string($_POST['email']);
 $nr_tel = $conn -> real_escape_string($_POST["nr_tel"]);
 $password = password_hash($conn -> real_escape_string($_POST["haslo"]), PASSWORD_DEFAULT, $options) ;
 
-if (checkIfExist($conn, $email)) {
-    header("Location: ./userAlreadyExists.html");
-}
+if (!checkIfExist($conn, $email)) {
+    $sql = "INSERT INTO uzytkownik(imie, nazwisko, nr_tel, email, typ_konta, haslo) VALUES ('$name', '$surname', '$nr_tel', '$email', 1, '$password')";
 
-
-$sql = "INSERT INTO uzytkownik(imie, nazwisko, nr_tel, email, typ_konta, haslo) VALUES ('$name', '$surname', '$nr_tel', '$email', 1, '$password')";
-
-if ($conn -> query($sql) === TRUE) {
-    echo "Dodano nowego użytkownika";
-} else {
-    echo "Błąd: " . $sql . "<br>" . $conn->error;
+    if ($conn -> query($sql) === TRUE) {
+        echo "Dodano nowego użytkownika";
+    } else {
+        echo "Błąd: " . $sql . "<br>" . $conn->error;
+    }
+    $conn -> close();
+    header("Location: ./login.html");
 }
 $conn -> close();
-
-
-
-header("Location: ./login.html");
 ?>
     
 </body>
