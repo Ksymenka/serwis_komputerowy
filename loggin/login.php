@@ -62,7 +62,8 @@ if (validateUser($conn, $login) && validatePassword($conn, $login, $haslo)) {
     $stmt->bind_result($typ_konta);
     $stmt->fetch();
     $stmt->close();
-
+    
+    setcookie("Username", $login, time() + (86400 * 30), "/");
     switch ($typ_konta) {
         case 1:
             header("Location: ./logged/user.php");

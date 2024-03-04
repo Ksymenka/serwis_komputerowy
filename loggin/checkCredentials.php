@@ -13,7 +13,7 @@
         <a href="./registration.html">Zarejestruj się</a>
     </header>
 
-    <h1>Użytkownik o tym adresie email już istnieje!</h1>
+    <div class="content"><h1>Użytkownik o tym adresie email już istnieje!</h1></div>
 
 <?php
 $servername = "127.0.0.1"; 
