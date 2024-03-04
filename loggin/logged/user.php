@@ -21,6 +21,10 @@ $username = $_COOKIE["Username"];
     </header>
 
     <div class="content">
+       <h1>Wybierz działanie</h1> 
+            <a href="./actions/addComputer.php">Dodaj komputer</a>
+            <a href="./actions/userComputers.php">Zobacz swoje komputery</a>
+
 
     </div>
         
