@@ -34,6 +34,8 @@ $username = $_COOKIE['Username'];
                 <label for="3">Telefon</label>
             </div>
             <input type="submit" value="Dodaj komputer">
+            <p id="err"></p>
+            <script src="./validate.js"></script>
             <?php
             $servername = "127.0.0.1"; 
             $username = "Admin";
